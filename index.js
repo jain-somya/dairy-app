@@ -2,7 +2,6 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 
-
 import routes from "./src/routes/routes.js";
 const app = express();
 const port = 3000;
@@ -14,6 +13,6 @@ app.get("/", (req, res) => {
 
 app.use("/", routes);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
